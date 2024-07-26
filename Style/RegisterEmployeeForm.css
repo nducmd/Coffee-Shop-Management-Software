@@ -1,0 +1,25 @@
+
+.header-color{
+    -fx-background-color: #f1efdc;
+}
+
+.first-color{
+    -fx-background-color: #fff;
+    -fx-background-radius: 30px;
+}
+
+.button{
+    -fx-background-radius: 5px;
+    -fx-border-color: #000;
+    -fx-border-radius: 5px;
+    -fx-background-color: transparent;
+}
+
+.button:hover{
+    -fx-border-color: #0fb565;
+    -fx-border-radius: 5px;
+}
+
+.text-radius{
+    -fx-background-radius: 5px;
+}

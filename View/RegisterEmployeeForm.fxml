@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterEmployeeFormController">
+   <children>
+      <VBox prefHeight="541.0" prefWidth="740.0">
+         <children>
+            <AnchorPane prefHeight="54.0" prefWidth="823.0" styleClass="header-color" stylesheets="@../Style/RegisterEmployeeForm.css">
+               <children>
+                  <Text layoutX="293.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đăng kí nhân viên" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="616.0" prefWidth="804.0" style="-fx-background-color: e6d2aa;" stylesheets="@../Style/RegisterEmployeeForm.css">
+               <children>
+                  <AnchorPane layoutX="23.0" layoutY="21.0" prefHeight="559.0" prefWidth="471.0" style="-fx-background-color: f0ece3; -fx-background-radius: 20;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="21.0">
+                     <children>
+                        <Text layoutX="36.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Họ:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="lastNameField" layoutX="176.0" layoutY="60.0" prefHeight="26.0" prefWidth="187.0" />
+                        <Text layoutX="36.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Giới tính:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="36.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Tên:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="firstNameField" layoutX="176.0" layoutY="108.0" prefHeight="26.0" prefWidth="187.0" />
+                        <Text layoutX="36.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Ngày sinh:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="genderBox" layoutX="176.0" layoutY="215.0" prefHeight="31.0" prefWidth="187.0" />
+                        <DatePicker fx:id="birthdateField" layoutX="176.0" layoutY="159.0" prefHeight="31.0" prefWidth="187.0" />
+                        <Text layoutX="440.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Địa chỉ:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="addressField" layoutX="566.0" layoutY="108.0" prefHeight="26.0" prefWidth="187.0" />
+                        <Text layoutX="440.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Điện thoại:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="phoneField" layoutX="566.0" layoutY="60.0" prefHeight="26.0" prefWidth="187.0" />
+                        <Text layoutX="440.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Chức vụ:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="positionBox" layoutX="566.0" layoutY="159.0" prefHeight="31.0" prefWidth="187.0" />
+                        <Button fx:id="addButton" layoutX="307.0" layoutY="280.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="58.0" prefWidth="187.0" text="Thêm">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

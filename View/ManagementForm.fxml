@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="990.0" prefWidth="1918.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManagementFormController">
+   <children>
+      <BorderPane fx:id="managementPane" prefHeight="200.0" prefWidth="200.0" styleClass="right-side-color" stylesheets="@../Style/ManagementForm.css">
+         <left>
+            <VBox prefHeight="990.0" prefWidth="360.0" styleClass="left-side-color" stylesheets="@../Style/ManagementForm.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="currentDateLable" alignment="CENTER" prefHeight="27.0" prefWidth="360.0" text="Date" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="employeeName" alignment="CENTER" prefHeight="45.0" prefWidth="301.0" text="tên nhân viên">
+                     <VBox.margin>
+                        <Insets left="30.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></Label>
+                  <Label fx:id="employeePositon" alignment="CENTER" prefHeight="26.0" prefWidth="125.0" text="Vị trí">
+                     <VBox.margin>
+                        <Insets bottom="50.0" left="110.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Cambria Bold" size="20.0" />
+                     </font></Label>
+                  <HBox>
+                     <children>
+                        <Button fx:id="showEmployeeInfoButton" mnemonicParsing="false" onAction="#showEmployeeInfo" prefHeight="70.0" prefWidth="180.0" text="Sửa">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="47.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/Change.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="10.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="exchangeViewButton" mnemonicParsing="false" onAction="#exchangeView" prefHeight="70.0" prefWidth="180.0" text="Chuyển">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/change_screen.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="dashboardButton" mnemonicParsing="false" onAction="#switchForm" prefHeight="70.0" prefWidth="180.0" text="Tổng quan">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="66.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="customersButton" mnemonicParsing="false" onAction="#switchForm" prefHeight="70.0" prefWidth="180.0" text="Khách hàng">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/Customer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="-10.0" />
+                     </padding></Button>
+                  <Button fx:id="employeeButton" mnemonicParsing="false" onAction="#switchForm" prefHeight="70.0" prefWidth="180.0" text="Nhân viên">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="73.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/client.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="inventoryButton" mnemonicParsing="false" onAction="#switchForm" prefHeight="70.0" prefWidth="180.0" text="Kho">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/product.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="55.0" />
+                     </padding></Button>
+                  <Button fx:id="salesHistoryButton" mnemonicParsing="false" onAction="#switchForm" prefHeight="70.0" prefWidth="180.0" text="Lịch sử">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="90.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="78.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/sale%20history.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding></Button>
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" prefHeight="70.0" prefWidth="180.0" text="Đăng xuất">
+                     <VBox.margin>
+                        <Insets left="90.0" top="120.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="80.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</StackPane>

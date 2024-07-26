@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="637.0" prefWidth="1000.0" styleClass="background-color" stylesheets="@../Style/InventoryForm.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InventoryFormController">
+   <children>
+      <TableView fx:id="productTable" layoutX="50.0" layoutY="86.0" prefHeight="528.0" prefWidth="900.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="86.0">
+         <columns>
+            <TableColumn fx:id="idColumn" maxWidth="162.0" prefWidth="108.0" text="Mã sản phẩm" />
+            <TableColumn fx:id="nameColumn" maxWidth="500.0" minWidth="67.19998168945312" prefWidth="500.0" text="Tên" />
+            <TableColumn fx:id="unitColumn" maxWidth="252.0" minWidth="75.0" prefWidth="252.0" text="Đơn vị" />
+            <TableColumn fx:id="priceColumn" maxWidth="240.0" prefWidth="210.0" text="Giá" />
+            <TableColumn fx:id="statusColumn" maxWidth="240.0" prefWidth="240.0" text="Trạng thái" />
+            <TableColumn fx:id="viewColumn" maxWidth="447.0" prefWidth="150.0" text="Xem" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="50.0" layoutY="14.0" prefHeight="60.0" prefWidth="900.0" styleClass="first-color" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <TextField fx:id="searchProductField" layoutX="14.0" layoutY="9.0" onAction="#searchProduct" prefHeight="41.0" prefWidth="209.0" promptText="🔎 Tìm sản phẩm" style="-fx-background-radius: 10;" />
+            <Button fx:id="addButton" layoutX="586.0" layoutY="6.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="45.0" prefWidth="139.0" text="Thêm mới" AnchorPane.rightAnchor="175.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/add_new.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="exportButton" layoutX="787.0" layoutY="6.0" mnemonicParsing="false" onAction="#exportToExcel" prefHeight="45.0" prefWidth="139.0" text="Xuất excel" AnchorPane.rightAnchor="14.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/excel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

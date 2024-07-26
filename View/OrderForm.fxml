@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="838.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OrderFormController">
+   <children>
+      <AnchorPane prefHeight="866.0" prefWidth="1315.0" styleClass="background-color" stylesheets="@../Style/orderForm.css">
+         <children>
+            <BorderPane prefHeight="838.0" prefWidth="1315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="52.0" prefWidth="1271.0" styleClass="date-color" stylesheets="@../Style/orderForm.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="logoutButton" alignment="CENTER_RIGHT" layoutX="1125.0" layoutY="7.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="141.0" text="Đăng Xuất" AnchorPane.rightAnchor="5.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/logout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="currentDateLable" layoutX="24.0" layoutY="11.0" text="Date">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="showEmployeeInfoButton" alignment="CENTER_RIGHT" layoutX="1022.0" layoutY="7.0" mnemonicParsing="false" onAction="#showEmployeeInfo" prefHeight="38.0" prefWidth="100.0" text="Sửa   " AnchorPane.rightAnchor="149.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/Change.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="employeeName" layoutX="690.0" layoutY="16.0" prefHeight="21.0" prefWidth="204.0" text="Tên" AnchorPane.rightAnchor="377.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="exchangeViewButton" layoutX="968.0" layoutY="5.0" mnemonicParsing="false" onAction="#exchangeView" prefHeight="42.0" prefWidth="35.0" styleClass="text-radius" stylesheets="@../Style/orderForm.css" AnchorPane.rightAnchor="252.0">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icon/refresh.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </BorderPane.margin>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <GridPane BorderPane.alignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="749.0" prefWidth="1315.0">
+                           <children>
+                              <GridPane layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="749.0" prefWidth="687.0">
+                                       <children>
+                                          <AnchorPane prefHeight="498.0" prefWidth="676.0" styleClass="first-color" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <children>
+                                                <TableView fx:id="orderTable" layoutX="-8.0" layoutY="45.0" prefHeight="460.0" prefWidth="676.0" stylesheets="@../Style/orderForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="nameColumn" editable="false" maxWidth="280.0" prefWidth="176.80003013610803" sortable="false" text="Tên Hàng Hoá" />
+                                                    <TableColumn fx:id="unitColumn" editable="false" maxWidth="70.0" prefWidth="57.600006103515625" sortable="false" text="ĐVT" />
+                                                      <TableColumn fx:id="quantityColumn" editable="false" maxWidth="130.0" prefWidth="67.20001220703125" sortable="false" text="SL" />
+                                                      <TableColumn fx:id="priceColumn" editable="false" maxWidth="160.0" prefWidth="115.20001220703125" sortable="false" text="Đơn Giá" />
+                                                      <TableColumn fx:id="valueColumn" editable="false" maxWidth="250.0" prefWidth="184.7999267578125" sortable="false" text="Thành Tiền" />
+                                                      <TableColumn fx:id="deleteColumn" editable="false" maxWidth="90.0" minWidth="6.0" prefWidth="76.79998779296875" sortable="false" text="Xoá" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                                <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn Bàn">
+                                                   <font>
+                                                      <Font size="17.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="tableField" layoutX="87.0" layoutY="8.0" onAction="#selectTable" prefHeight="31.0" prefWidth="64.0" styleClass="text-radius" />
+                                                <Button fx:id="mergeTableButton" alignment="CENTER_RIGHT" layoutX="153.0" layoutY="4.0" mnemonicParsing="false" onAction="#mergeTable" prefHeight="37.0" prefWidth="126.0" text="Ghép Bàn">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                   <graphic>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../Icon/merge.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Button>
+                                                <Text layoutX="578.71923828125" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bàn" AnchorPane.rightAnchor="77.265625">
+                                                   <font>
+                                                      <Font size="17.0" />
+                                                   </font>
+                                                </Text>
+                                                <TextField fx:id="selectedTableField" layoutX="614.0" layoutY="8.0" prefHeight="31.0" prefWidth="56.0" styleClass="text-radius" AnchorPane.rightAnchor="14.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutY="535.0" prefHeight="237.0" prefWidth="676.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                                             <children>
+                                                <GridPane layoutY="6.0" prefHeight="229.0" prefWidth="676.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <AnchorPane prefHeight="215.0" prefWidth="340.0" styleClass="first-color">
+                                                         <children>
+                                                            <TextField fx:id="findCustomerField" layoutX="57.0" layoutY="11.0" prefHeight="31.0" prefWidth="182.0" promptText="Tìm Khách Hàng" styleClass="text-radius" />
+                                                            <Button fx:id="findCusomerButton" layoutX="243.0" layoutY="6.0" mnemonicParsing="false" onAction="#findCustomer" prefHeight="43.0" prefWidth="52.0" text="🔎">
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button fx:id="addCusomerButton" contentDisplay="CENTER" graphicTextGap="1.0" layoutX="300.0" layoutY="6.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="29.0" prefWidth="35.0" text="+">
+                                                               <font>
+                                                                  <Font name="System Bold" size="20.0" />
+                                                               </font>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="nameCustomerField" editable="false" layoutX="65.0" layoutY="58.0" prefHeight="26.0" prefWidth="183.0" styleClass="text-radius" text="Khách lẻ" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="84.0" />
+                                                            <Text layoutX="13.931640625" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SĐT:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="phoneNumberCustomerField" editable="false" layoutX="65.0" layoutY="99.0" prefHeight="26.0" prefWidth="183.0" styleClass="text-radius" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="84.0" />
+                                                            <Text layoutX="14.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điểm:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="pointCustomerField" editable="false" layoutX="65.0" layoutY="142.0" prefHeight="26.0" prefWidth="183.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="84.0" />
+                                                            <Text layoutX="14.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hạng:" wrappingWidth="50.00000205356628">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="tierCustomerField" editable="false" layoutX="65.0" layoutY="181.0" prefHeight="26.0" prefWidth="183.0" styleClass="text-radius" text="Không" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="84.0" />
+                                                            <Label fx:id="findCustomerResult" layoutX="65.0" layoutY="43.0" prefHeight="15.0" prefWidth="253.0" textFill="RED">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <GridPane.margin>
+                                                            <Insets right="8.0" />
+                                                         </GridPane.margin>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="215.0" prefWidth="340.0" styleClass="first-color" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <Text layoutX="37.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tạm tính:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="temporarilyMoneyField" editable="false" layoutX="142.0" layoutY="8.0" prefHeight="26.0" prefWidth="174.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="25.0" />
+                                                            <Text layoutX="38.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Giảm giá(%):">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="discountField" editable="false" layoutX="143.0" layoutY="44.0" prefHeight="26.0" prefWidth="50.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="143.0" />
+                                                            <Text layoutX="189.89453125" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VAT(%):" AnchorPane.rightAnchor="77.98867187500002">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="vatField" editable="false" layoutX="254.20000000000002" layoutY="44.0" prefHeight="31.0" prefWidth="50.0" styleClass="text-radius" text="10" AnchorPane.rightAnchor="25.0" />
+                                                            <Text layoutX="36.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng cộng:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="totalMoneyField" editable="false" layoutX="142.0" layoutY="79.0" prefHeight="26.0" prefWidth="172.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="25.0" />
+                                                            <Text layoutX="37.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Khách đưa:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="receivedMoneyField" layoutX="142.0" layoutY="113.0" onAction="#updateBilling" prefHeight="26.0" prefWidth="172.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="25.0" />
+                                                            <Text layoutX="37.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trả lại:">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Text>
+                                                            <TextField fx:id="returnMoneyField" editable="false" layoutX="143.0" layoutY="146.0" prefHeight="26.0" prefWidth="172.0" styleClass="text-radius" text="0" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="25.0" />
+                                                            <Button fx:id="payButton" alignment="CENTER" layoutX="169.0" layoutY="180.0" mnemonicParsing="false" onAction="#saveHistoryAndReceipt" prefHeight="37.0" prefWidth="141.0" text="Tiền Mặt" textAlignment="CENTER" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="26.0">
+                                                               <font>
+                                                                  <Font name="System Bold" size="16.0" />
+                                                               </font>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="21.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Icon/dollar-currency-symbol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="qrButton" layoutX="20.0" layoutY="181.0" mnemonicParsing="false" onAction="#createQrcode" prefHeight="37.0" prefWidth="128.0" text="Mã QR">
+                                                               <font>
+                                                                  <Font name="System Bold" size="16.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                         <GridPane.margin>
+                                                            <Insets left="8.0" />
+                                                         </GridPane.margin>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="735.0" prefWidth="581.0" styleClass="first-color" GridPane.columnIndex="1">
+                                       <children>
+                                          <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="725.0" prefWidth="573.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="11.0">
+                                             <children>
+                                                <ScrollPane layoutX="3.0" layoutY="56.0" prefHeight="662.0" prefWidth="568.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="56.0">
+                                                  <content>
+                                                      <GridPane fx:id="menuGridPane" hgap="12.0" prefHeight="15.0" prefWidth="66.0" vgap="12.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                      </GridPane>
+                                                  </content>
+                                                   <padding>
+                                                      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                                                   </padding>
+                                                </ScrollPane>
+                                                <TextField fx:id="filterProduct" layoutX="7.0" layoutY="14.0" onAction="#filterProduct" prefHeight="31.0" prefWidth="204.0" promptText="Tìm sản phẩm" styleClass="text-radius" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets bottom="4.0" left="10.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" />
+                     </BorderPane.margin>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,43 @@
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right, #f7da89, #f7da89);
+}
+.white-form{
+    -fx-background-color: #fff;
+    -fx-background-radius: 30px;
+}
+
+.radius{
+    -fx-background-radius: 30px;
+    -fx-background-color: #fff;
+    -fx-padding: 0;
+    -fx-border-radius: 30px;
+    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+.transparent{
+    -fx-background-color: transparent;
+}
+.cardProduct{
+    -fx-background-color: #fff;
+    -fx-background-radius: 15px 15px 15px 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
+.element {
+}
+.element:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: #fff;
+    -fx-background-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.background-color1{
+   -fx-background-color: linear-gradient(to right, #E8D8C9,#E9DCC8);
+   -fx-background-radius: 10px;
+}
+

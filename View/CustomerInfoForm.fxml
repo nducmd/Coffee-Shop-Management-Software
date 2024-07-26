@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerInfoFormController">
+   <children>
+      <VBox prefHeight="689.0" prefWidth="700.0">
+         <children>
+            <AnchorPane prefHeight="318.0" prefWidth="747.0" styleClass="first-color" stylesheets="@../Style/CustomerInfoForm.css">
+               <children>
+                  <AnchorPane layoutX="35.0" layoutY="15.0" prefHeight="51.0" prefWidth="691.0" styleClass="second-color">
+                     <children>
+                        <Text layoutX="15.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thông tin khách hàng">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="changeButton" layoutX="575.0" layoutY="4.9775390625" mnemonicParsing="false" onAction="#changeInfo" prefHeight="33.0" prefWidth="95.0" text="Sửa">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="saveButton" layoutX="575.0" layoutY="4.9775390625" mnemonicParsing="false" onAction="#saveInfo" prefHeight="39.0" prefWidth="95.0" text="Lưu" visible="false">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteCustomerButton" layoutX="460.0" layoutY="4.9775390625" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="33.0" prefWidth="95.0" text="Xoá">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="32.0" layoutY="93.0" minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="423.0" styleClass="second-color">
+                     <children>
+                        <Label layoutX="14.0" layoutY="5.0" text="Họ">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lastNameField" editable="false" layoutX="14.0" layoutY="27.0" styleClass="radius" />
+                        <Label layoutX="232.0" layoutY="3.0" text="Tên">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstNameField" editable="false" layoutX="231.0" layoutY="24.0" prefHeight="26.0" prefWidth="157.0" styleClass="radius" />
+                        <Label layoutX="14.0" layoutY="67.0" text="Giới tính">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="232.0" layoutY="67.0" text="Ngày sinh">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="134.0" text="Địa chỉ">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addressField" editable="false" layoutX="14.0" layoutY="159.0" styleClass="radius" />
+                        <Label layoutX="231.0" layoutY="134.0" prefHeight="20.0" prefWidth="95.0" text="Số điện thoại">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="phoneNumberField" editable="false" layoutX="231.0" layoutY="159.0" prefHeight="26.0" prefWidth="157.0" styleClass="radius" />
+                        <DatePicker fx:id="birthdatePicker" editable="false" layoutX="232.0" layoutY="94.0" prefHeight="26.0" prefWidth="156.0" />
+                        <ComboBox fx:id="genderBox" layoutX="14.0" layoutY="94.0" prefHeight="31.0" prefWidth="187.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="494.0" layoutY="93.0" minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="232.0" styleClass="second-color">
+                     <children>
+                        <Label layoutX="14.0" layoutY="5.0" text="Mã khách hàng">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idField" editable="false" layoutX="14.0" layoutY="27.0" prefHeight="31.0" prefWidth="180.0" styleClass="radius" />
+                        <Label layoutX="14.0" layoutY="137.0" text="Hạng thành viên">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tierField" editable="false" layoutX="15.0" layoutY="160.0" prefHeight="31.0" prefWidth="180.0" styleClass="radius" />
+                        <Label layoutX="14.0" layoutY="67.0" text="Điểm">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pointField" editable="false" layoutX="14.0" layoutY="95.0" prefHeight="31.0" prefWidth="180.0" styleClass="radius" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="465.0" prefWidth="747.0" styleClass="first-color" stylesheets="@../Style/CustomerInfoForm.css">
+               <children>
+                  <AnchorPane layoutX="33.0" layoutY="28.0" prefHeight="399.0" prefWidth="691.0" styleClass="second-color">
+                     <children>
+                        <Text layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lịch sử mua hàng">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <TableView fx:id="purchaseHistoryTable" layoutX="29.0" layoutY="38.0" prefHeight="339.0" prefWidth="633.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="51.200008392333984" text="Mã HĐ" />
+                            <TableColumn fx:id="timeColumn" prefWidth="160.80001831054688" text="Thời gian" />
+                              <TableColumn fx:id="tableColumn" prefWidth="41.59999084472656" text="Bàn" />
+                              <TableColumn fx:id="totalMoneyColumn" prefWidth="124.800048828125" text="Tổng tiền" />
+                              <TableColumn fx:id="employeeColumn" prefWidth="164.0" text="Nhân viên" />
+                              <TableColumn fx:id="viewColumn" prefWidth="91.199951171875" text="Xem" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

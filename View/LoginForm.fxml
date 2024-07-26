@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginFormController">
+   <children>
+      <AnchorPane>
+         <children>
+            <AnchorPane layoutX="300.0" layoutY="-1.0" prefHeight="610.0" prefWidth="480.0" styleClass="btn" stylesheets="@../Style/loginForm.css" AnchorPane.bottomAnchor="0.20000000000004547" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+               <children>
+                  <Label layoutX="88.0" layoutY="43.0" stylesheets="@../Style/loginForm.css" text="Đăng Nhập">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="usernameField" layoutX="100.0" layoutY="174.0" maxHeight="50.0" maxWidth="300.0" prefHeight="50.0" prefWidth="300.0" promptText="Tên đăng nhập" styleClass="radius" stylesheets="@../Style/loginForm.css" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="80.80000000000007">
+                     <font>
+                        <Font size="24.0" />
+                     </font></TextField>
+                  <PasswordField fx:id="passwordField" layoutX="100.0" layoutY="279.0" prefHeight="50.0" prefWidth="300.0" promptText="Mật khẩu" styleClass="radius" stylesheets="@../Style/loginForm.css" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="79.20000000000005">
+                     <font>
+                        <Font size="24.0" />
+                     </font></PasswordField>
+                  <Button fx:id="loginButton" layoutX="146.0" layoutY="392.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="43.0" prefWidth="188.0" stylesheets="@../Style/loginForm.css" text="Đăng nhập" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="145.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="nav-btn" />
+                        <String fx:value="radius-login" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="-1.0" prefHeight="609.0" prefWidth="298.0" styleClass="white-form" stylesheets="@../Style/loginForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="-1.0">
+               <children>
+                  <Text layoutX="78.0" layoutY="443.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="COFFEE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="27.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.11" textAlignment="CENTER" wrappingWidth="232.00783514976501">
+                     <font>
+                        <Font name="Freestyle Script" size="50.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="305.0" fitWidth="313.0" layoutX="21.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/login.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

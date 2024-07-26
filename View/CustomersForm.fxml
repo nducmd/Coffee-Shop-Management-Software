@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../Style/CustomerForm.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomersFormController">
+   <children>
+      <TableView fx:id="customersTable" layoutX="51.0" layoutY="55.0" prefHeight="502.0" prefWidth="915.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="IdColumn" maxWidth="80.0" prefWidth="60.0" text="Mã KH" />
+          <TableColumn fx:id="lastNameColumn" maxWidth="500.0" minWidth="75.0" prefWidth="230.0" text="Họ" />
+            <TableColumn fx:id="firstNameColumn" maxWidth="1.7976931348623157E308" minWidth="75.0" text="Tên" />
+            <TableColumn fx:id="genderColumn" maxWidth="80.0" prefWidth="75.0" text="Giới Tính" />
+            <TableColumn fx:id="birthdateColumn" maxWidth="120.0" prefWidth="110.0" text="Ngày Sinh" />
+            <TableColumn fx:id="phoneNumberColumn" maxWidth="150.0" prefWidth="150.0" text="Số Điện Thoại" />
+            <TableColumn fx:id="addressColumn" maxWidth="485.0" minWidth="9.0" prefWidth="485.0" text="Địa chỉ" />
+            <TableColumn fx:id="pointColumn" maxWidth="211.0" prefWidth="108.0" text="Điểm" />
+            <TableColumn fx:id="tierColumn" maxWidth="257.0" prefWidth="101.0" text="Hạng" />
+            <TableColumn fx:id="viewColumn" maxWidth="65.0" prefWidth="65.0" text="Xem" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="50.0" layoutY="18.0" prefHeight="64.0" prefWidth="900.0" styleClass="background-color" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <TextField fx:id="searchCustomer" layoutX="28.0" layoutY="13.0" onAction="#searchCustomer" prefHeight="38.0" prefWidth="246.0" promptText="🔎 Tìm khách hàng" styleClass="radius">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Button fx:id="addCustomerButton" layoutX="584.0" layoutY="10.0" mnemonicParsing="false" onAction="#addCustomer" text="Thêm mới" AnchorPane.rightAnchor="175.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/add_new.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="exportButton" layoutX="785.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportToExcel" prefHeight="44.0" prefWidth="142.0" text="Xuất excel" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/excel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="30.0" />
+   </padding>
+</AnchorPane>

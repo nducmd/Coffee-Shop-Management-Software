@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="352" pageHeight="300" whenNoDataType="AllSectionsNoDetail" columnWidth="312" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="5670dd7d-16f5-4605-b64a-15158fd5b889">
+	<property name="ireport.zoom" value="2.143588810000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<style name="ban">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{table} == 0]]></conditionExpression>
+			<style forecolor="#FFFFFF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{table} >= 1]]></conditionExpression>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<parameter name="sId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT dbo.customer.*, dbo.employee.*, dbo.invoice.*, dbo.sales_history.*,
+	CONCAT(dbo.customer.last_name ,' ' ,dbo.customer.first_name) AS customer_name,
+	CONCAT(dbo.employee.last_name ,' ' ,dbo.employee.first_name) AS employee_name,
+	dbo.customer.phone_number AS customer_phone
+FROM     dbo.customer INNER JOIN
+                  dbo.sales_history ON dbo.customer.customer_id = dbo.sales_history.customer_id INNER JOIN
+                  dbo.employee ON dbo.sales_history.employee_id = dbo.employee.employee_id INNER JOIN
+                  dbo.invoice ON dbo.sales_history.sales_history_id = dbo.invoice.sales_history_id
+WHERE dbo.sales_history.sales_history_id = $P{sId}]]>
+	</queryString>
+	<field name="customer_id" class="java.lang.Integer"/>
+	<field name="last_name" class="java.lang.String"/>
+	<field name="first_name" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="birthdate" class="java.lang.String"/>
+	<field name="phone_number" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="customer_point" class="java.lang.Integer"/>
+	<field name="customer_tier" class="java.lang.String"/>
+	<field name="deleted" class="java.lang.String"/>
+	<field name="employee_id" class="java.lang.Integer"/>
+	<field name="position" class="java.lang.String"/>
+	<field name="hours_worked" class="java.lang.Integer"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="sales_history_id" class="java.lang.Integer"/>
+	<field name="product_id" class="java.lang.Integer"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="price" class="java.lang.Integer"/>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="unit" class="java.lang.String"/>
+	<field name="unit_price" class="java.lang.Integer"/>
+	<field name="temp_money" class="java.lang.String"/>
+	<field name="discount" class="java.lang.String"/>
+	<field name="vat" class="java.lang.String"/>
+	<field name="total_money" class="java.lang.String"/>
+	<field name="received_money" class="java.lang.String"/>
+	<field name="return_money" class="java.lang.String"/>
+	<field name="sales_date" class="java.lang.String"/>
+	<field name="table" class="java.lang.Integer"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="employee_name" class="java.lang.String"/>
+	<field name="customer_phone" class="java.lang.String"/>
+	<variable name="sales_history_id_SUM" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sales_history_id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="0" width="304" height="39" uuid="a6b3a5b1-4d8e-4c01-9ddb-6e413b4020ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="Monotype Corsiva" size="32"/>
+				</textElement>
+				<text><![CDATA[2.11 COFFEE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="71" y="28" width="108" height="28" uuid="6e04875f-46c1-443d-82eb-312270f169db"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="28" width="84" height="20" uuid="426b5515-be1c-4501-a66b-dec99900bfa7"/>
+				<textFieldExpression><![CDATA[$F{customer_phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="56" width="108" height="31" uuid="99c6cdbe-34af-4f84-8375-b4cd2fe58639"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="5" width="66" height="20" uuid="8c21699d-abc2-45a8-bdb5-1332f624c867"/>
+				<text><![CDATA[Mã Hoá Đơn:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="28" width="66" height="28" uuid="3715b2bc-2b66-4dc6-a9e4-6a7e4efbd56c"/>
+				<text><![CDATA[Khách Hàng:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="56" width="66" height="20" uuid="4ccf684e-eea0-4d00-a7bb-6febf4895244"/>
+				<text><![CDATA[Nhân Viên:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="5" width="49" height="20" uuid="3bc8b596-b878-419f-a8fe-ad3886050f2a"/>
+				<text><![CDATA[Thời Gian:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="28" width="38" height="20" uuid="e9bef8c1-a77c-4bdd-9a27-2263a4d9ed46"/>
+				<text><![CDATA[Số ĐT:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="87" width="312" height="1" uuid="c44b95bc-0871-4aa2-aadf-ca012025db81"/>
+			</line>
+			<staticText>
+				<reportElement x="183" y="56" width="38" height="20" uuid="58b6a86d-2056-4c1c-ba06-4d3815e7eea9"/>
+				<text><![CDATA[Bàn:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="ban" x="221" y="56" width="84" height="20" uuid="be567f02-9772-4295-8c34-3275d8052f02"/>
+				<textFieldExpression><![CDATA[$F{table}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="5" width="100" height="20" uuid="112004fe-744c-4d67-b6e6-5e688f95936a"/>
+				<textFieldExpression><![CDATA[$F{sales_history_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="5" width="100" height="20" uuid="98bc024f-23fa-4567-983f-291edd3efb5b"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm").format(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").parse($F{sales_date}))]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="4" width="89" height="20" uuid="8a5ddf0d-1b2f-482f-84f7-0268adaba78a"/>
+				<text><![CDATA[Tên Món]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="4" width="21" height="20" uuid="ae3f18c1-59e4-4d1d-b5e1-f1d606a32312"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[STT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="4" width="35" height="20" uuid="06c8babe-c5cb-4bda-b40d-50ebd70d4ebb"/>
+				<text><![CDATA[ĐVT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="4" width="54" height="20" uuid="06ceafd3-e563-4188-88e8-461cbe60da28"/>
+				<text><![CDATA[Đơn Giá]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="4" width="27" height="20" uuid="6e35d9b1-1dda-4da5-ada3-0311301216d7"/>
+				<text><![CDATA[SL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="4" width="61" height="20" uuid="8e819e1b-e9fc-475c-824c-77a5882c775d"/>
+				<text><![CDATA[Thành Tiền]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="312" height="1" uuid="585fff48-d8ce-4725-9207-803ad7920182"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="0" width="89" height="34" uuid="2feb48ea-b1a4-477a-b1a6-f6233c0fc773"/>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="0" width="21" height="20" uuid="377a0986-37bf-46d2-86c0-74e5a4d2aa3b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="35" height="20" uuid="2e5bb0b5-53c4-4426-a9a2-b7bc8e9fbafb"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="163" y="0" width="27" height="20" uuid="d50a0ee7-c782-4130-932d-57cf2dfff08b"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="0" width="54" height="20" uuid="02d845f9-6a60-446c-ba49-a44f45a63bb2"/>
+				<textFieldExpression><![CDATA[$F{unit_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="0" width="61" height="20" uuid="33d3dc94-8751-4254-bfa5-c3d167935a84"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="87" y="63" width="100" height="20" uuid="400802a0-4518-452b-9c0c-96accc7c7221"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tổng Cộng:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="3" width="100" height="20" uuid="d70b193c-4fce-406c-93b9-b8d5581fb14c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tạm Tính:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="3" width="100" height="20" uuid="9355e63f-3c5b-46fc-b733-b8522561becd"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temp_money}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="23" width="100" height="20" uuid="53a66270-fa23-40bc-b988-fdb1a00b4644"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Giảm Giá:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="23" width="13" height="20" uuid="e8e9ed1f-41ec-47e3-a3d2-6110261a6b94"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="23" width="16" height="20" uuid="abe42a1c-5769-4c72-8a5a-fdf1e4031015"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="43" width="100" height="20" uuid="523d7d5e-1ac9-4ce8-bb5c-9960904d0e33"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VAT:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="43" width="13" height="20" uuid="b06acb00-cb07-4613-8ce5-474136138cc5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="43" width="16" height="20" uuid="72ec686e-d47d-464f-91a6-d299a41ad7ac"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="63" width="100" height="20" uuid="3bb3c1a4-d38a-487a-8d93-cd102ca218d6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_money}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="83" width="100" height="20" uuid="966b10e0-0369-4d5c-9c72-2bd0ef30038a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tiền Khách Đưa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="83" width="100" height="20" uuid="0f696884-ceb8-448f-ad57-8a02d8f99a6e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{received_money}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="103" width="100" height="20" uuid="6ff669b2-d29c-4243-9102-dadd419f9081"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tiền Thừa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="103" width="100" height="20" uuid="e1ed2f06-2e9e-4e21-9ecf-717a40e499ac"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{return_money}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="88" y="130" width="122" height="20" uuid="75faa402-aceb-469f-9fa0-73604de9bd49"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Cảm ơn và hẹn gặp lại!]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="312" height="1" uuid="1f8878a3-81d4-4e35-a4d5-84b85a26ba9a"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

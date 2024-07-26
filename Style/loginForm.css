@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 22, 2023, 9:44:37 PM
+    Author     : nducmd
+*/
+
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right, #f7da89, #f7da89);
+}
+.white-form{
+    -fx-background-color: #fff;
+}
+.nav-btn:hover{
+    -fx-background-color: #0fb565;
+    -fx-text-fill: #ffffff;
+}
+.radius{
+    -fx-background-radius: 8px;
+}
+.radius-login{
+    -fx-background-radius: 40px;
+}
+.btn{
+    -fx-background-color: #e6d2aa; 
+    
+}

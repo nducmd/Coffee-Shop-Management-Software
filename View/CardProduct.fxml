@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="243.0" maxWidth="220.0" onMouseClicked="#addToOrderList" prefHeight="228.0" prefWidth="168.0" stylesheets="@../Style/mainFormDesign.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CardProductController">
+   <children>
+      <AnchorPane layoutX="4.0" layoutY="7.0" prefHeight="243.0" prefWidth="227.0" styleClass="background-color1" stylesheets="@../Style/CardProduct.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="idLable" layoutX="42.5" layoutY="53.0" text="Label">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageProduct" fitHeight="125.0" fitWidth="175.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+            <Label fx:id="priceLable" contentDisplay="CENTER" layoutX="10.0" layoutY="192.0" prefHeight="34.0" prefWidth="103.0" text="100000" textAlignment="CENTER" textFill="#ba7339">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <VBox alignment="CENTER" layoutX="111.0" layoutY="193.0" prefHeight="34.0" prefWidth="70.0">
+               <children>
+                  <Label fx:id="unitLable" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="82.0" text="Chiếc" textAlignment="CENTER" visible="false">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="nameLable" layoutX="7.0" layoutY="132.0" prefHeight="62.0" prefWidth="176.0" text="Trà sữa trân châu đường đen" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+   </children>
+</AnchorPane>
